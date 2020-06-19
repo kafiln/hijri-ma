@@ -1,8 +1,8 @@
 const { JSDOM } = require('jsdom');
 
-const MONTHS = {
-  شوّال: 9,
-};
+const MONTHS = 'محرم_صفر_ربيع الأول_ربيع الثاني_جمادى الأولى_جمادى الثانية_رجب_شعبان_رمضان_شوّال_ذو القعدة_ذو الحجة'.split(
+  '_'
+);
 
 export const nodeFromUrl = async (config) => {
   const document = await JSDOM.fromURL(config.websiteUrl);
@@ -10,7 +10,7 @@ export const nodeFromUrl = async (config) => {
   return node;
 };
 
-export const monthNumber = (name) => MONTHS[name];
+export const monthNumber = (name) => MONTHS.indexOf(name) + 1;
 export const zeroFill = (n) => (('' + n).length < 2 ? '0' + n : '' + n);
 
 export const stringDateFromText = (textContent) =>
