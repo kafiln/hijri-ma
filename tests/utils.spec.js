@@ -1,11 +1,11 @@
-const config = require('../config');
+const config = require('../src/config');
 const {
   nodeFromUrl,
   stringDateFromText,
   dateFromtext,
   zeroFill,
   monthNumber,
-} = require('..');
+} = require('../src');
 
 const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
 const HIJRI_TEXT_DATE = 'الجمعة 27 شوّال 1441هـ';

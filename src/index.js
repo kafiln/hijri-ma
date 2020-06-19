@@ -23,9 +23,3 @@ export const dateFromtext = (textContent, separator = '/') => {
 
   return [date, month, year].map(zeroFill).join(separator);
 };
-
-export const main = async () => {
-  const node = await nodeFromUrl(require('./config'));
-  console.log(stringDateFromText(node.textContent));
-  console.log(dateFromtext(node.textContent));
-};
