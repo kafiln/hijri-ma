@@ -1,37 +1,37 @@
 const config = require('../src/config');
 const {
-  nodeFromUrl,
   stringDateFromText,
   dateFromtext,
   zeroFill,
   monthNumber,
 } = require('../src');
 
-const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
+const { fetchData } = require('../src/api');
+jest.mock('../src/api');
+
+// const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
 const HIJRI_TEXT_DATE = 'الجمعة 27 شوّال 1441هـ';
 const HIJRI_DATE = '27/10/1441';
 
 describe('Steps to get the text', () => {
-  it('Should get the node from the config', async () => {
-    const node = await nodeFromUrl(config); //TODO: Mock this
-    expect(node.textContent).toMatchSnapshot();
-  });
-
   it('Should add zero only when necessary', () => {
     expect(zeroFill(9)).toBe('09');
     expect(zeroFill(27)).toBe('27');
     expect(zeroFill(1441)).toBe('1441');
   });
 
-  it('Should take only the necessary data', () => {
-    const result = stringDateFromText(TEXT_CONTENT);
+  it('Should take only the necessary data', async () => {
+    const textContent = await fetchData(config);
+    const result = stringDateFromText(textContent);
     expect(result).toBe(HIJRI_TEXT_DATE);
   });
-  it('Should parse correct date', () => {
-    const result = dateFromtext(TEXT_CONTENT);
+  it('Should parse correct date', async () => {
+    const textContent = await fetchData(config);
+    const result = dateFromtext(textContent);
     expect(result).toBe(HIJRI_DATE);
   });
 
+  //TODO: Refactor this into it.each(table)
   it('Should return the right month number', () => {
     //TODO: Add other months
     expect(monthNumber('محرم')).toBe(1);
