@@ -1,8 +1,7 @@
 module.exports = {
-  //   errorMessage: 'Invalid node path',
-  //   dateFormat: 'hhmm DD-MM-YYYY Z',
-  //   timeOffset: '+0000',
-  websiteUrl: 'http://www.habous.gov.ma/',
-  textNode:
-    '#pub_boot > div > div:nth-child(1) > div.col-md-3.col-sm-3.col-xs-12.date.nopadding',
+  url: 'http://www.habous.gov.ma/prieres/horaire_hijri.php',
+  monthNode: '#horaire > tbody > tr:nth-child(1) > td:nth-child(2)',
+  expectedNode: '#horaire > tbody',
+  todayNode: '#horaire > tbody > tr.cournt > td:nth-child(2)',
+  year: 1441,
 };

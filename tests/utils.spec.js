@@ -6,10 +6,7 @@ const {
   monthNumber,
 } = require('../src');
 
-const { fetchData } = require('../src/api');
-jest.mock('../src/api');
-
-// const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
+const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
 const HIJRI_TEXT_DATE = 'الجمعة 27 شوّال 1441هـ';
 const HIJRI_DATE = '27/10/1441';
 
@@ -21,13 +18,11 @@ describe('Steps to get the text', () => {
   });
 
   it('Should take only the necessary data', async () => {
-    const textContent = await fetchData(config);
-    const result = stringDateFromText(textContent);
+    const result = stringDateFromText(TEXT_CONTENT);
     expect(result).toBe(HIJRI_TEXT_DATE);
   });
   it('Should parse correct date', async () => {
-    const textContent = await fetchData(config);
-    const result = dateFromtext(textContent);
+    const result = dateFromtext(TEXT_CONTENT);
     expect(result).toBe(HIJRI_DATE);
   });
 

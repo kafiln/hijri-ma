@@ -1,12 +1,14 @@
 const { JSDOM } = require('jsdom');
 
-export const fetchData = config => {
+const innerDocument = document => document.window.document;
+
+export const fetchData = (url, extractorFn = _ => _) => {
   return (
-    JSDOM.fromURL(config.websiteUrl)
-      .then(
-        document =>
-          document.window.document.querySelector(config.textNode).textContent
-      )
+    JSDOM.fromURL(url)
+      .then(innerDocument)
+      .then(document => {
+        return extractorFn(document);
+      })
       //TODO: replace this by a better error handling 👇
       .catch(err => {
         // console.log(err);

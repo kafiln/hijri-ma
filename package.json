@@ -20,7 +20,6 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    "@types/jest": "^26.0.0",
-    "moment-hijri": "^2.1.2"
+    "@types/jest": "^26.0.0"
   }
 }

@@ -1,7 +1,9 @@
-const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
+// const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
+const page = require('./page');
+const { JSDOM } = require('jsdom');
 
-export const fetchData = _config => {
+export const fetchData = (_url, fn = _ => _) => {
   return new Promise((resolve, _reject) => {
-    resolve(TEXT_CONTENT);
+    resolve(fn(new JSDOM(page).window.document));
   });
 };
