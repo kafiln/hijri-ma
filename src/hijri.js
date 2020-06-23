@@ -22,6 +22,9 @@ export const getMonthName = (number, lang = 'ar') => {
   return months[number - 1];
 };
 
+// from 1 ==> 12
+export const getMonthNumber = arabicName => MONTHS_AR.indexOf(arabicName) + 1;
+
 export const parse = date => {
   const [day, month, year] = date.split('/');
   const monthName = getMonthName(month, 'fr');

@@ -8,7 +8,7 @@ const expectedLengthExtractor = node => node.children.length - 1;
 const extractElement = (document, textNode, fn = defaultExtractor) =>
   fn(document.querySelector(textNode));
 
-export const getDate = _ =>
+export const getData = _ =>
   fetchData(config.url, document => {
     const expected = extractElement(
       document,

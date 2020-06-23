@@ -11,7 +11,6 @@ export const fetchData = (url, extractorFn = _ => _) => {
       })
       //TODO: replace this by a better error handling 👇
       .catch(err => {
-        // console.log(err);
         throw 'Some Error';
       })
   );
