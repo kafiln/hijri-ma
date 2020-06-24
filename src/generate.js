@@ -1,13 +1,17 @@
 import { getMonthName, getMonthNumber } from './hijri';
+import { localTime } from './time';
 
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
-dayjs.extend(utc);
 const config = require('./config');
 
-const localTime = _ => dayjs(_).utc().utcOffset(config.TIMEZONE_OFFSET);
-
-export const generateMonth = (today, month, expected) => {
+export /**
+ *
+ *
+ * @param {*} today
+ * @param {*} month
+ * @param {*} expected
+ * @returns
+ */
+const generateMonth = (today, month, expected) => {
   const differenceToFirstDay = today - 1;
   const monthIndex = getMonthNumber(month);
   let currentDate = localTime().subtract(differenceToFirstDay, 'day');

@@ -1,10 +1,6 @@
-const config = require('../src/config');
-const {
-  stringDateFromText,
-  dateFromtext,
-  zeroFill,
-  monthNumber,
-} = require('../src');
+const { stringDateFromText, dateFromtext, zeroFill } = require('../src/utils');
+
+const { getMonthNumber } = require('../src/hijri');
 
 const TEXT_CONTENT = 'الجمعة 27 شوّال 1441هـ الموافق لـ 19 يونيو 2020';
 const HIJRI_TEXT_DATE = 'الجمعة 27 شوّال 1441هـ';
@@ -26,21 +22,19 @@ describe('Steps to get the text', () => {
     expect(result).toBe(HIJRI_DATE);
   });
 
-  //TODO: Refactor this into it.each(table)
   it('Should return the right month number', () => {
-    //TODO: Add other months
-    expect(monthNumber('محرم')).toBe(1);
-    expect(monthNumber('صفر')).toBe(2);
-    expect(monthNumber('ربيع الأول')).toBe(3);
-    expect(monthNumber('ربيع الثاني')).toBe(4);
-    expect(monthNumber('جمادى الأولى')).toBe(5);
-    expect(monthNumber('جمادى الثانية')).toBe(6);
-    expect(monthNumber('رجب')).toBe(7);
-    expect(monthNumber('شعبان')).toBe(8);
-    expect(monthNumber('رمضان')).toBe(9);
-    expect(monthNumber('شوّال')).toBe(10);
-    expect(monthNumber('ذو القعدة')).toBe(11);
-    expect(monthNumber('ذو الحجة')).toBe(12);
+    expect(getMonthNumber('محرم')).toBe(1);
+    expect(getMonthNumber('صفر')).toBe(2);
+    expect(getMonthNumber('ربيع الأول')).toBe(3);
+    expect(getMonthNumber('ربيع الثاني')).toBe(4);
+    expect(getMonthNumber('جمادى الأولى')).toBe(5);
+    expect(getMonthNumber('جمادى الثانية')).toBe(6);
+    expect(getMonthNumber('رجب')).toBe(7);
+    expect(getMonthNumber('شعبان')).toBe(8);
+    expect(getMonthNumber('رمضان')).toBe(9);
+    expect(getMonthNumber('شوّال')).toBe(10);
+    expect(getMonthNumber('ذو القعدة')).toBe(11);
+    expect(getMonthNumber('ذو الحجة')).toBe(12);
     //TODO: Handle not found case
   });
 });

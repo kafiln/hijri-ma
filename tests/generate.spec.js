@@ -2,6 +2,8 @@ const { getMonthName } = require('../src/hijri');
 const { generateMonth } = require('../src/generate');
 const config = require('../src/config');
 
+jest.mock('../src/time');
+
 describe('Generation of the hijri month', () => {
   it('Result should be an array containing all the days in the months', () => {
     const expected = 29,

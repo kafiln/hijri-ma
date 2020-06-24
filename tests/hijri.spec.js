@@ -1,4 +1,3 @@
-const hijri = require('../src/hijri');
 const { parse } = require('../src/hijri');
 
 describe('Formating a hijri date', () => {

@@ -17,6 +17,13 @@ const MONTHS = [
   'Thul-Hijjah',
 ];
 
+//FIXME: Disclaimer, I don't like the i18n, it needs to be handled properly
+
+// export const translateMonthName = monthName =>
+//   MONTHS_AR.includes(monthName)
+//     ? MONTHS[MONTHS_AR.indexOf(monthName)]
+//     : MONTHS_AR[MONTHS.indexOf(monthName)];
+
 export const getMonthName = (number, lang = 'ar') => {
   const months = lang === 'ar' ? MONTHS_AR : MONTHS;
   return months[number - 1];
