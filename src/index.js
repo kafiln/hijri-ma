@@ -1,37 +1,13 @@
-import config from './config';
 import { getData } from './extract';
+import { formatDate } from './format';
 import { generateMonth } from './generate';
-
-/**
- *Used to correctly wrap a string to use in a concatenation with different direction ( rtl and ltr)
- *
- * @param {String} str the string to wrap
- * @param {Boolean} isRtl true if direction === 'rtl', false otherwise
- * @returns {String} the wrapped string
- */
-const wrapString = (str, isRtl) =>
-  isRtl ? '\u202B' + str + '\u202C' : '\u202A' + str + '\u202C';
+import { getMonthNumber } from './hijri';
 
 //FIXME: The format logic should be moved to a separate file/module
-export const getCurrentDate = async () => {
+export const getCurrentDate = async (inArabic = true) => {
   const { today, month } = await getData();
-  return (
-    [
-      {
-        name: config.YEAR,
-      },
-      {
-        name: month,
-        isRtl: true,
-      },
-      {
-        name: today,
-      },
-    ]
-      // .reverse()
-      .map(e => wrapString(e.name, e.isRtl))
-      .join(' ')
-  );
+  const monthIndex = getMonthNumber(month);
+  return formatDate(today, monthIndex, inArabic);
 };
 export const getCurrentMonth = async () => {
   const { today, month, expected } = await getData();

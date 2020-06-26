@@ -10,10 +10,10 @@ const MONTHS = [
   'Jumada al-Ula',
   'Jumada al-Thania',
   'Rajab',
-  'Sha’ban',
+  "Sha'ban",
   'Ramadhan',
   'Shawwal',
-  'Thul-Qi’dah',
+  "Thul-Qi'dah",
   'Thul-Hijjah',
 ];
 
@@ -24,16 +24,16 @@ const MONTHS = [
 //     ? MONTHS[MONTHS_AR.indexOf(monthName)]
 //     : MONTHS_AR[MONTHS.indexOf(monthName)];
 
-export const getMonthName = (number, lang = 'ar') => {
-  const months = lang === 'ar' ? MONTHS_AR : MONTHS;
+export const getMonthName = (number, inArabic = true) => {
+  const months = inArabic ? MONTHS_AR : MONTHS;
   return months[number - 1];
 };
 
 // from 1 ==> 12
 export const getMonthNumber = arabicName => MONTHS_AR.indexOf(arabicName) + 1;
 
-export const parse = date => {
+export const parse = (date, inArabic = true) => {
   const [day, month, year] = date.split('/');
-  const monthName = getMonthName(month, 'fr');
+  const monthName = getMonthName(month, inArabic);
   return [day, monthName, year].join(' ');
 };

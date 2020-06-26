@@ -1,11 +1,9 @@
 const { JSDOM } = require('jsdom');
 
-const innerDocument = document => document.window.document;
-
 export const fetchData = (url, extractorFn = _ => _) => {
   return (
     JSDOM.fromURL(url)
-      .then(innerDocument)
+      .then(document => document.window.document)
       .then(document => {
         return extractorFn(document);
       })
