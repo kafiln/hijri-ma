@@ -1,26 +1,77 @@
-const { parse, getMonthNumber } = require('../src/hijri');
+const { getMonthNumber, translateMonthName } = require('../src/hijri');
 
-describe('Formating a hijri date', () => {
-  it('Should return the right month number', () => {
-    expect(getMonthNumber('محرم')).toBe(1);
-    expect(getMonthNumber('صفر')).toBe(2);
-    expect(getMonthNumber('ربيع الأول')).toBe(3);
-    expect(getMonthNumber('ربيع الثاني')).toBe(4);
-    expect(getMonthNumber('جمادى الأولى')).toBe(5);
-    expect(getMonthNumber('جمادى الثانية')).toBe(6);
-    expect(getMonthNumber('رجب')).toBe(7);
-    expect(getMonthNumber('شعبان')).toBe(8);
-    expect(getMonthNumber('رمضان')).toBe(9);
-    expect(getMonthNumber('شوّال')).toBe(10);
-    expect(getMonthNumber('ذو القعدة')).toBe(11);
-    expect(getMonthNumber('ذو الحجة')).toBe(12);
+// Testing all the data to detect regression
+//TODO: Using constants for names
+
+describe.only('Hijri data', () => {
+  it.each([
+    ['محرم', 1],
+    ['صفر', 2],
+    ['ربيع الأول', 3],
+    ['ربيع الثاني', 4],
+    ['جمادى الأولى', 5],
+    ['جمادى الثانية', 6],
+    ['رجب', 7],
+    ['شعبان', 8],
+    ['رمضان', 9],
+    ['شوّال', 10],
+    ['ذو القعدة', 11],
+    ['ذو الحجة', 12],
+    ['Muharram', 1],
+    ['Safar', 2],
+    ["Rabi' al-Awwal", 3],
+    ["Rabi' al-Thani", 4],
+    ['Jumada al-Ula', 5],
+    ['Jumada al-Thania', 6],
+    ['Rajab', 7],
+    ["Sha'ban", 8],
+    ['Ramadhan', 9],
+    ['Shawwal', 10],
+    ["Thul-Qi'dah", 11],
+    ['Thul-Hijjah', 12],
+  ])("%s 's number is %d", (name, number) => {
+    expect(getMonthNumber(name)).toBe(number);
     //TODO: Handle not found case
   });
 
   it.each([
-    ['27/10/1441', '27 Shawwal 1441'],
-    ['30/1/1441', '30 Muharram 1441'],
-  ])('%s is %s', (date, expectedResult) => {
-    expect(parse(date, false)).toBe(expectedResult);
+    ['محرم', 'Muharram'],
+    ['Muharram', 'محرم'],
+
+    ['صفر', 'Safar'],
+    ['Safar', 'صفر'],
+
+    ['ربيع الأول', "Rabi' al-Awwal"],
+    ["Rabi' al-Awwal", 'ربيع الأول'],
+
+    ['ربيع الثاني', "Rabi' al-Thani"],
+    ["Rabi' al-Thani", 'ربيع الثاني'],
+
+    ['جمادى الأولى', 'Jumada al-Ula'],
+    ['Jumada al-Ula', 'جمادى الأولى'],
+
+    ['جمادى الثانية', 'Jumada al-Thania'],
+    ['Jumada al-Thania', 'جمادى الثانية'],
+
+    ['رجب', 'Rajab'],
+    ['Rajab', 'رجب'],
+
+    ['شعبان', "Sha'ban"],
+    ["Sha'ban", 'شعبان'],
+
+    ['رمضان', 'Ramadhan'],
+    ['Ramadhan', 'رمضان'],
+
+    ['شوّال', 'Shawwal'],
+    ['Shawwal', 'شوّال'],
+
+    ['ذو القعدة', "Thul-Qi'dah"],
+    ["Thul-Qi'dah", 'ذو القعدة'],
+
+    ['ذو الحجة', 'Thul-Hijjah'],
+    ['Thul-Hijjah', 'ذو الحجة'],
+    //TODO: Handle not found case
+  ])('%s is the correct translation for %s', (original, translated) => {
+    expect(translateMonthName(original)).toBe(translated);
   });
 });

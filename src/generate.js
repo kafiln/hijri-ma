@@ -22,7 +22,7 @@ const generateMonth = (today, month, expected) => {
       year: config.YEAR,
       month: {
         ar: month,
-        fr: getMonthName(monthIndex, 'fr'),
+        fr: getMonthName(monthIndex, false),
       },
       georgianDate: localTime(currentDate).format('DD-MM-YYYY'),
     });

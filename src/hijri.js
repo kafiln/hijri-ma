@@ -19,10 +19,10 @@ const MONTHS = [
 
 //FIXME: Disclaimer, I don't like the i18n, it needs to be handled properly
 
-// export const translateMonthName = monthName =>
-//   MONTHS_AR.includes(monthName)
-//     ? MONTHS[MONTHS_AR.indexOf(monthName)]
-//     : MONTHS_AR[MONTHS.indexOf(monthName)];
+export const translateMonthName = monthName =>
+  MONTHS_AR.includes(monthName)
+    ? MONTHS[MONTHS_AR.indexOf(monthName)]
+    : MONTHS_AR[MONTHS.indexOf(monthName)];
 
 export const getMonthName = (number, inArabic = true) => {
   const months = inArabic ? MONTHS_AR : MONTHS;
@@ -30,10 +30,5 @@ export const getMonthName = (number, inArabic = true) => {
 };
 
 // from 1 ==> 12
-export const getMonthNumber = arabicName => MONTHS_AR.indexOf(arabicName) + 1;
-
-export const parse = (date, inArabic = true) => {
-  const [day, month, year] = date.split('/');
-  const monthName = getMonthName(month, inArabic);
-  return [day, monthName, year].join(' ');
-};
+export const getMonthNumber = arabicName =>
+  MONTHS_AR.indexOf(arabicName) + 1 || MONTHS.indexOf(arabicName) + 1;

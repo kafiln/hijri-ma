@@ -8,14 +8,14 @@ describe('Generation of the hijri month', () => {
   it('Result should be an array containing all the days in the months', () => {
     const expected = 29,
       today = 1,
-      month = getMonthName(11);
+      month = 'ذو القعدة';
     const result = generateMonth(today, month, expected);
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(expected);
 
     result.forEach(e => {
       expect(e.month.ar).toBe(month);
-      expect(e.month.fr).toBe(getMonthName(11, 'fr'));
+      expect(e.month.fr).toBe("Thul-Qi'dah");
       expect(e.year).toBe(config.YEAR);
     });
 
