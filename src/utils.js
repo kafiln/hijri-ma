@@ -20,14 +20,3 @@ export const zeroFill = n => (('' + n).length < 2 ? '0' + n : '' + n);
  */
 export const wrapString = (str, isRtl) =>
   isRtl ? '\u202B' + str + '\u202C' : '\u202A' + str + '\u202C';
-
-// export const stringDateFromText = textContent =>
-//   textContent.split(' ').splice(0, 4).join(' ');
-
-// export const dateFromtext = (textContent, separator = '/') => {
-//   let [_day, date, month, year] = stringDateFromText(textContent).split(' ');
-//   year = year.match(/\d*/g)[0];
-//   month = getMonthNumber(month); //FIXME: Should handle exception where name not found
-
-//   return [date, month, year].map(zeroFill).join(separator);
-// };

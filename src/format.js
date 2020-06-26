@@ -3,6 +3,15 @@ import { getMonthName } from './hijri';
 const config = require('./config');
 const { wrapString } = require('./utils');
 
+/**
+ *
+ *
+ * @param {*} day
+ * @param {*} month
+ * @param {boolean} [inArabic=true]
+ * @param {*} [year=config.YEAR]
+ * @returns
+ */
 export const formatDate = (day, month, inArabic = true, year = config.YEAR) => {
   return inArabic
     ? [

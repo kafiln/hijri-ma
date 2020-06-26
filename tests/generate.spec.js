@@ -1,4 +1,3 @@
-const { getMonthName } = require('../src/hijri');
 const { generateMonth } = require('../src/generate');
 const config = require('../src/config');
 

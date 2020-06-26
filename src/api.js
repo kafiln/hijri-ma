@@ -1,5 +1,12 @@
 const { JSDOM } = require('jsdom');
 
+/**
+ *
+ *
+ * @param {*} url
+ * @param {*} [extractorFn=_ => _]
+ * @returns
+ */
 export const fetchData = (url, extractorFn = _ => _) => {
   return (
     JSDOM.fromURL(url)

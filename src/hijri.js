@@ -19,16 +19,33 @@ const MONTHS = [
 
 //FIXME: Disclaimer, I don't like the i18n, it needs to be handled properly
 
+/**
+ *
+ *
+ * @param {*} monthName
+ */
 export const translateMonthName = monthName =>
   MONTHS_AR.includes(monthName)
     ? MONTHS[MONTHS_AR.indexOf(monthName)]
     : MONTHS_AR[MONTHS.indexOf(monthName)];
 
+/**
+ *
+ *
+ * @param {*} number
+ * @param {boolean} [inArabic=true]
+ * @returns
+ */
 export const getMonthName = (number, inArabic = true) => {
   const months = inArabic ? MONTHS_AR : MONTHS;
   return months[number - 1];
 };
 
 // from 1 ==> 12
+/**
+ *
+ *
+ * @param {*} arabicName
+ */
 export const getMonthNumber = arabicName =>
   MONTHS_AR.indexOf(arabicName) + 1 || MONTHS.indexOf(arabicName) + 1;
