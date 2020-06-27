@@ -1,16 +1,23 @@
 {
-  "name": "lib",
-  "version": "1.0.0",
+  "name": "hijri-ma",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
     "demo": "nodemon --exec babel-node demo.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "hijri-date",
+    "morocco",
+    "habous"
+  ],
+  "author": {
+    "name": "Kafil Nasdami",
+    "email": "kafil.nasdami@gmail.com",
+    "url": "https://kafil.xyz"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
@@ -22,5 +29,10 @@
   "dependencies": {
     "@types/jest": "^26.0.0",
     "dayjs": "^1.8.28"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "Github",
+    "url": "https://github.com/Kafiil/hirji-ma"
   }
 }
