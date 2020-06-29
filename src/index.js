@@ -1,7 +1,7 @@
-import { getData } from './extract';
-import { formatDate } from './format';
-import { generateMonth } from './generate';
-import { getMonthNumber } from './hijri';
+const { getData } = require('./extract');
+const { formatDate } = require('./format');
+const { generateMonth } = require('./generate');
+const { getMonthNumber } = require('./hijri');
 
 /**
  *

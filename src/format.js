@@ -1,4 +1,4 @@
-import { getMonthName } from './hijri';
+const { getMonthName } = require('./hijri');
 
 const config = require('./config');
 const { wrapString } = require('./utils');

@@ -1,4 +1,4 @@
-import { fetchData } from './api';
+const { fetchData } = require('./api');
 const config = require('./config');
 
 /* Extractors */

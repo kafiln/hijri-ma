@@ -1,5 +1,5 @@
-import { getMonthName, getMonthNumber } from './hijri';
-import { localTime } from './time';
+const  { getMonthName, getMonthNumber } = require('./hijri');
+const  { localTime } = require('./time');
 
 const config = require('./config');
 
