@@ -1,6 +1,6 @@
 {
   "name": "hijri-ma",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -20,13 +20,11 @@
     "url": "https://kafil.xyz"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
     "@babel/node": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/preset-env": "^7.10.3",
     "babel-jest": "^26.0.1",
-    "babel-preset-es2015": "^6.24.1",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4"
   },

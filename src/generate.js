@@ -1,5 +1,5 @@
-const  { getMonthName, getMonthNumber } = require('./hijri');
-const  { localTime } = require('./time');
+const { getMonthName, getMonthNumber } = require('./hijri');
+const { localTime } = require('./time');
 
 const config = require('./config');
 
@@ -24,7 +24,7 @@ const generateMonth = (today, month, expected) => {
         ar: month,
         fr: getMonthName(monthIndex, false),
       },
-      georgianDate: localTime(currentDate).format('DD-MM-YYYY'),
+      georgianDate: localTime(currentDate).toISOString(),
     });
     currentDate = localTime(currentDate).add(1, 'day');
   }
