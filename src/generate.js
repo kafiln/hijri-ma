@@ -24,7 +24,7 @@ const generateMonth = (today, month, expected) => {
         ar: month,
         fr: getMonthName(monthIndex, false),
       },
-      georgianDate: localTime(currentDate).toISOString(),
+      georgianDate: localTime(currentDate).format(config.DATEFORMAT),
     });
     currentDate = localTime(currentDate).add(1, 'day');
   }

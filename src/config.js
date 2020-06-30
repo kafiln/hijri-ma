@@ -5,4 +5,5 @@ module.exports = {
   todayNode: '#horaire > tbody > tr.cournt > td:nth-child(2)',
   YEAR: 1441,
   TIMEZONE_OFFSET: 1,
+  DATEFORMAT: 'YYYY-MM-DD',
 };
