@@ -22,5 +22,12 @@ export const getCurrentDate = async (inArabic = true) => {
  */
 export const getCurrentMonth = async () => {
   const { today, month, expected } = await getData();
-  return generateMonth(today, month, expected);
+  const result = generateMonth(today, month, expected).map(e => ({
+    day: e.day,
+    year: e.year,
+    month: getMonthNumber(e.month.ar),
+    georgianDate: e.georgianDate,
+  }));
+
+  return result;
 };
