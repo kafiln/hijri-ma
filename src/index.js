@@ -26,7 +26,7 @@ export const getCurrentMonth = async () => {
     day: e.day,
     year: e.year,
     month: getMonthNumber(e.month.ar),
-    georgianDate: e.georgianDate,
+    gregorianDate: e.gregorianDate,
   }));
 
   return result;

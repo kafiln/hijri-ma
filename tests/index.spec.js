@@ -28,7 +28,7 @@ describe('The main functionnalities', () => {
       expect(result[i].day).toBe(i + 1);
       expect(result[i].month).toBe(11);
       expect(result[i].year).toBe(1441);
-      expect(result[i].georgianDate).toBe(day);
+      expect(result[i].gregorianDate).toBe(day);
       day = localTime(day).add(1, 'day').format(DATEFORMAT);
     }
   });
