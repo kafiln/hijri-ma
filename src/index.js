@@ -20,9 +20,9 @@ export const getCurrentDate = async (inArabic = true) => {
  *
  * @returns
  */
-export const getCurrentMonth = async () => {
+export const getCurrentMonth = async options => {
   const { today, month, expected } = await getData();
-  const result = generateMonth(today, month, expected).map(e => ({
+  const result = generateMonth(today, month, expected, options).map(e => ({
     day: e.day,
     year: e.year,
     month: getMonthNumber(e.month.ar),

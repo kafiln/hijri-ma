@@ -12,7 +12,7 @@ const { wrapString } = require('./utils');
  * @param {*} [year=config.YEAR]
  * @returns
  */
-export const formatDate = (day, month, inArabic = true, year = config.YEAR) => {
+export const formatDate = (day, month, inArabic = true, year = config.year) => {
   return inArabic
     ? [
         {

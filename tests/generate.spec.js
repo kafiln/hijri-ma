@@ -8,14 +8,14 @@ describe('Generation of the hijri month', () => {
     const expected = 29,
       today = 1,
       month = 'ذو القعدة';
-    const result = generateMonth(today, month, expected);
+    const result = generateMonth(today, month, expected, { year: 1442 });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(expected);
 
     result.forEach(e => {
       expect(e.month.ar).toBe(month);
       expect(e.month.fr).toBe("Thul-Qi'dah");
-      expect(e.year).toBe(config.YEAR);
+      expect(e.year).toBe(1442);
     });
 
     expect(result[0].gregorianDate).toBe('2020-06-23');

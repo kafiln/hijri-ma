@@ -1,7 +1,7 @@
 const { getMonthName, getMonthNumber } = require('./hijri');
 const { localTime } = require('./time');
 
-const config = require('./config');
+const defaultConfig = require('./config');
 
 export /**
  *
@@ -11,7 +11,8 @@ export /**
  * @param {*} expected
  * @returns
  */
-const generateMonth = (today, month, expected) => {
+const generateMonth = (today, month, expected, options) => {
+  const config = { ...defaultConfig, ...options };
   const differenceToFirstDay = today - 1;
   const monthIndex = getMonthNumber(month);
   let currentDate = localTime().subtract(differenceToFirstDay, 'day');
@@ -19,7 +20,7 @@ const generateMonth = (today, month, expected) => {
   for (let day = 1; day <= expected; day++) {
     result.push({
       day,
-      year: config.YEAR,
+      year: config.year,
       month: {
         ar: month,
         fr: getMonthName(monthIndex, false),
