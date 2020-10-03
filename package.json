@@ -1,13 +1,12 @@
 {
   "name": "hijri-ma",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublish": "babel src --out-dir lib",
-    "demo": "nodemon --exec babel-node demo.js"
+    "prepublish": "babel --ignore src/__mocks__ src --out-dir lib"
   },
   "keywords": [
     "hijri-date",
@@ -17,7 +16,7 @@
   "author": {
     "name": "Kafil Nasdami",
     "email": "kafil.nasdami@gmail.com",
-    "url": "https://kafil.xyz"
+    "url": "https://kafil.now.sh"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -36,6 +35,6 @@
   "license": "MIT",
   "repository": {
     "type": "Github",
-    "url": "https://github.com/Kafiil/hirji-ma"
+    "url": "https://github.com/kafiln/hirji-ma"
   }
 }

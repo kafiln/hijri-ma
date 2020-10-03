@@ -4,8 +4,8 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/kaaafiiil" target="_blank">
-    <img alt="Twitter: kaaafiiil" src="https://img.shields.io/twitter/follow/kaaafiiil.svg?style=social" />
+  <a href="https://twitter.com/kafiiil" target="_blank">
+    <img alt="Twitter: kafiiil" src="https://img.shields.io/twitter/follow/kafiiil.svg?style=social" />
   </a>
 </p>
 
@@ -28,9 +28,9 @@ npm run test
 👤 **Kafil Nasdami**
 
 - Website: http://kafil.xyz
-- Twitter: [@kaaafiiil](https://twitter.com/kaaafiiil)
-- Github: [@kafiil](https://github.com/kafiil)
-- LinkedIn: [@nkafil](https://linkedin.com/in/nkafil)
+- Twitter: [@kafiiil](https://twitter.com/kafiiil)
+- Github: [@kafiln](https://github.com/kafiln)
+- LinkedIn: [@kafiln](https://linkedin.com/in/kafiln)
 
 ## Show your support
 
