@@ -27,7 +27,7 @@ npm run test
 
 👤 **Kafil Nasdami**
 
-- Website: http://kafil.xyz
+- Website: https://kafil.now.sh
 - Twitter: [@kafiiil](https://twitter.com/kafiiil)
 - Github: [@kafiln](https://github.com/kafiln)
 - LinkedIn: [@kafiln](https://linkedin.com/in/kafiln)

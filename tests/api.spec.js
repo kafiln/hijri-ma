@@ -19,12 +19,12 @@ describe('Scrapping the website', () => {
   // it.only('Should display the current date in Arabic', async () => {
   //   const result = await getCurrentDate();
   //   console.log(result);
-  //   expect(result).toContain(config.YEAR);
+  //   expect(result).toContain(config.year);
   // });
   // it.only('Should display the current date', async () => {
   //   const result = await getCurrentDate(false);
   //   console.log(result);
-  //   expect(result).toContain(config.YEAR);
+  //   expect(result).toContain(config.year);
   // });
 
   it('Should throw an error', async () => {
