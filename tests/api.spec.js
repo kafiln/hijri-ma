@@ -1,4 +1,4 @@
-const { fetchData } = require('../src/api');
+const { fetchData, ApiError } = require('../src/api');
 const config = require('../src/config');
 const { getData } = require('../src/extract');
 const { getCurrentDate } = require('../src');
@@ -28,10 +28,14 @@ describe('Scrapping the website', () => {
   // });
 
   it('Should throw an error', async () => {
+    expect(() => fetchData('http://localhost:3000/').toThrow(ApiError));
+  });
+  it('Should throw an error', async () => {
     try {
       const _ = await fetchData('http://localhost:3000/');
-    } catch (error) {
-      expect(error).toBe('Some Error');
+    } catch (err) {
+      expect(err.message).toBe('API Error');
+      expect(err.status).toBe(500);
     }
   });
 });

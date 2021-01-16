@@ -1,5 +1,12 @@
 const { JSDOM } = require('jsdom');
 
+export class ApiError extends Error {
+  constructor(message = 'API Error', status = 500) {
+    super(message);
+    this.status = status;
+  }
+}
+
 /**
  *
  *
@@ -15,8 +22,8 @@ export const fetchData = (url, extractorFn = _ => _) => {
         return extractorFn(document);
       })
       //TODO: replace this by a better error handling 👇
-      .catch(err => {
-        throw 'Some Error';
+      .catch(_ => {
+        throw new ApiError();
       })
   );
 };
