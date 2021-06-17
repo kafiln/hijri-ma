@@ -15,7 +15,7 @@ describe.only('Hijri data', () => {
     ['شعبان', 8],
     ['رمضان', 9],
     ['شوال', 10],
-    ['ذو القعدة', 11],
+    ['ذي القعدة', 11],
     ['ذو الحجة', 12],
     ['Muharram', 1],
     ['Safar', 2],
@@ -65,8 +65,8 @@ describe.only('Hijri data', () => {
     ['شوال', 'Shawwal'],
     ['Shawwal', 'شوال'],
 
-    ['ذو القعدة', "Thul-Qi'dah"],
-    ["Thul-Qi'dah", 'ذو القعدة'],
+    ['ذي القعدة', "Thul-Qi'dah"],
+    ["Thul-Qi'dah", 'ذي القعدة'],
 
     ['ذو الحجة', 'Thul-Hijjah'],
     ['Thul-Hijjah', 'ذو الحجة'],

@@ -1,7 +1,7 @@
 const { getCurrentDate, getCurrentMonth, getAll } = require('../src');
 const { localTime } = require('../src/time');
 const { DATEFORMAT } = require('../src/config');
-const arDate = '‪1442‬ ‫ذو القعدة‬ ‪1‬';
+const arDate = '‪1442‬ ‫ذي القعدة‬ ‪1‬';
 const date = "1 Thul-Qi'dah 1442";
 
 jest.mock('../src/api');

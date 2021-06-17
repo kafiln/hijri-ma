@@ -999,7 +999,7 @@ function imprimer_page(){
             <td
               class="wakt"
             >
-              ذو القعدة
+              ذي القعدة
             </td>
             
                  

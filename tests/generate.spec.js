@@ -7,7 +7,7 @@ describe('Generation of the hijri month', () => {
   it('Result should be an array containing all the days in the months', () => {
     const expected = 29,
       today = 1,
-      month = 'ذو القعدة';
+      month = 'ذي القعدة';
     const result = generateMonth(today, month, expected, { year: 1442 });
     expect(Array.isArray(result)).toBe(true);
     expect(result.length).toBe(expected);
